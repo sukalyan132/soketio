@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html    lang="en" >
+<head>
+  <title>Nokia</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="css/style.css" rel="stylesheet">
+</head>
+ 
+
+<script src="js/angular.min.js"></script>
+<script src="http://localhost:9090/socket.io/socket.io.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.2/socket.io.js"></script>
+<script src="script/app.js"></script>
+ 
+
+    <!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+<body  class="bg" ng-app="defultApp" ng-controller="defultController">
+
+ <!-- Fixed navbar -->
+
+
+<nav class="navbar navbar-default newheader"    >
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+         <!--  <a class="navbar-brand" href="javascript:;" ng-hide="cbrsSecondLinkActivated" ng-click="startfunction()">App Started</a>  ng-show="cbrsSecondLinkActivated"-->
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active" ><a href="http://localhost:3000/" ng-click="requestForReset()" >
+            <img src="../Newimage/reset.png" style="width: 20%;"></img>  Reset</a></li>
+            <li class="dropdown" ng-show="cbrsSecondLinkActivated" >
+              <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="../Newimage/settings.png" style="width: 20%;" >
+              </img>   Setting <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="javascript:;" ng-click="requestForMode('false')">Online Mode</a></li>
+                <li><a href="javascript:;" ng-click="requestForMode('true')">Offline Mode</a></li>
+              </ul>
+            </li>
+        </ul>
+        <a > 4.5G Pro CBRS-FDD 4 CA </a>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="javascript:;" class="presentation" ng-show="cbrsSecondLinkActivated"   style="background-color:#31749c;color:#fff;" >View Presentation</a></li>
+           <!--  Please update url according to your required -->
+            <li><a href="http://www.nokia.com" target="_blank" class="nokiasite" ng-show="cbrsSecondLinkActivated"  style="background-color: #099e64;color:#fff;">Nokia Site</a></li>
+            <!--  Please update url according to your required -->
+
+           </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+ 
+<div class="container-fluid"  style="margin-top:150px;height:0px;" >
+  <div class="row">
+    <div class="col-lg-12" >
+      <h3 ng-show="carrier1Up" ><img src="../Newimage/wave-1.png" class="wave1" style=" "></img></h3>
+      <h3 ng-show="carrier2Up" ><img src="../Newimage/wave-2.png" class="wave2"></img></h3>
+      <h3 ng-show="carrier3Up"><img src="../Newimage/wave-5.png" class="wave3"></img></h3>
+       <h3 ng-show="carrier4Up"><img src="../Newimage/wave-3.png" class="wave4"></img></h3>
+        <h3 ng-show="carrier5Up"><img src="../Newimage/wave-4.png" class="wave5"></img></h3>  
+     </div>
+  </div>
+</div>  
+ 
+<div class="container-fluid " style="margin-top:27%;" >
+      <div class="row">
+        <div class="col-sm-2" style="width:15%"  ng-click="activateCbrsLink()">
+          <div class="well" style="height: 120px;border:0;border-radius:0;"  
+          ng-style="activateCbrs && {'background-color':'#099e64'} || {'background-color': '#099e64'}" >
+            <div class="content">
+                <a  href="javascript:;" class="link1"  style="color:#fff;text-decoration: none;"  
+                 > <center>NOKIA Bell <br/>Labs SAS<br>
+                <b>{{sas}}</b></center>
+                </a>
+            </div>
+          </div>
+          </div>
+          <div class="col-sm-3" style="width:23%;    margin-left: -34px;" ng-show="ButtonActive"> 
+          <div class="well" style="height: 120px; background-color:#cee5ac;border:0;border-radius:0; padding:31px;"   >
+            <div class="content">
+                <div class="bar"><div ng-style="sty1"></div></div>
+                <div class="bar"><div ng-style="sty2"></div></div>
+                <div class="bar"><div ng-style="sty3"></div></div>
+                <div class="bar"><div ng-style="sty4"></div></div>
+                <div class="bar"><div ng-style="sty5"></div></div>
+                <div class="bar"><div ng-style="sty6"></div></div>
+                <div class="bar"><div ng-style="sty7"></div></div>
+                <div class="bar"><div ng-style="sty8"></div></div>
+                <div class="bar"><div ng-style="sty9"></div></div>
+                <div class="bar"><div ng-style="sty10"></div></div>
+                <div class="bar"><div ng-style="sty11"></div></div>
+                <div class="bar"><div ng-style="sty12"></div></div>
+                <div class="bar"><div ng-style="sty13"></div></div>
+                <div class="bar"><div ng-style="sty14"></div></div>
+                <div class="bar"><div ng-style="sty15"></div></div>
+            </div>
+          </div>
+        </div>
+
+          <div class="col-sm-2" style="width:12%" ng-show="activeOnReciveCbrs" >
+          <div class="well" style="height: 120px; background-color:#; border:0;border-radius:0;" 
+           ng-style="activateRadar && {'background-color':'#2aad8f'} || {'background-color':activateRadarColor }">
+            <div class="content"  ng-click="activateRadar ?  activateRaderLink()  : '' ">
+                <a><img src="../Newimage/radat-icon.png"></img></a>
+               
+            </div>
+          </div>
+        </div>
+         <div class="col-sm-3" style="width:18%" ng-show="ButtonActive">
+          <div class="well" style="height: 120px; background-color:#edf0f4;border:0;border-radius:0; "   >
+            <div class="content">
+                <p class="link2">CBRS Downlink Throughput</p>
+                <center><b style="font-weight:800;font-size:17px">{{throughputForCbrs}}</b></center>
+                <p  class="link3">CARRIER3: <a style="text-decoration: none;"ng-style="carrier3Style">{{carrier3}} </a><br/> 
+                 CARRIER4: <a style="text-decoration: none;"ng-style="carrier4Style">{{carrier4}} </a></p>
+            </div>
+          </div>
+        </div>
+
+          <div class="col-sm-3" style="width:18%" >
+          <div class="well" style="height: 120px; background-color:#edf0f4;border:0;border-radius:0; "   >
+            <div class="content">
+ 
+                <p class="link2">FDD Downlink Throughput</p>
+                 <center><b style="font-weight:800;font-size:17px">{{throughputForFdd}}</b></center> 
+                <p class="link3">CARRIER1: <a style="text-decoration: none;"href="javascript:;" ng-style="carrier1Style">{{carrier1}} </a><br/> 
+                 CARRIER2: <a style="text-decoration: none;"href="javascript:;" ng-style="carrier2Style">{{carrier2}} </a> 
+            </div>
+          </div>
+        </div>
+
+        
+
+         <div class="col-sm-2" style="width:15%" >
+          <div class="well" style="height: 120px; background-color:#31749c;border:0;border-radius:0; "   >
+            <div class="content">
+                <p class="link4">Total Downlink Throughput</p>
+                <center><b class="link5" style="font-weight:800;font-size:17px"">{{totalThroughput}}</b></center>
+  
+            </div>
+          </div>
+        </div>
+
+        
+  </div>
+</div> 
+ 
+ 
+     <footer class="footer">
+      <div class="container-fluid ">
+            <div class="row">
+              <div class="col-sm-2"  style="margin-top:7px;">
+              <img src="../Newimage/logo-1.png" style="width:80%;"></img>
+              </div>
+               <div class="col-sm-4">
+               </div>
+              <div class="col-sm-2"  >
+              </div>
+              <div class="col-sm-2" style="margin-top:7px;">
+               <img src="../Newimage/logo-2.png" style="width:80%;"></img>
+              </div>
+              <div class="col-sm-2" style="margin-top:7px;">
+               <img src="../Newimage/logo-nokia.png" style="width:100%;"></img> 
+              </div>
+            </div>
+      </div>
+    </footer>
+
+</body>
+</html>

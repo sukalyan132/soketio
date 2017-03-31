@@ -1,0 +1,80 @@
+/* Remove the navbar's default margin-bottom and rounded borders */ 
+html {
+  position: relative;
+  min-height: 100%;
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
+}
+.bg
+{
+
+    background: url('../img/bg.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+ 
+}
+.newheader
+{
+  background-color:#fff;border-color: #fff;
+}
+.presentation
+{
+  background-color:#31749c;color: white;
+}
+.nokiasite
+{
+  background-color: #099e64; color: white;
+}
+.wave1
+{
+  width:88%;position:absolute; opacity: 0.6;;
+}
+.wave2
+{
+  width:85%;position: absolute; margin-left:3%;opacity: 0.6;;
+}
+.wave3
+{
+ width:66%;position: absolute; z-index: 100;margin-left:22%;opacity: 0.6;
+}
+.wave4
+{
+ width:51%;position: absolute; z-index: 100;margin-left:37%;opacity: 0.6;
+}
+.wave5
+{
+width:48%;position: absolute; z-index: 100;margin-left:40%;;opacity: 0.6;
+}
+.link1
+{
+  color:#fff;font-weight:600;text-decoration: none;
+}
+.bar
+{
+  height: 50px;width: 18px;background-color: #9d9d9d;opacity: 0.5;margin-left:3px; float: left; text-decoration: none;
+}
+.link2
+{
+  font-size: 14px;font-weight:600;text-decoration: none; text-align: center;
+}
+
+.link3
+{
+font-size: 13px;font-weight:600;text-decoration: none;
+}
+.link4
+{
+  font-size: 14px;font-weight:600;color:#fff; text-decoration: none;text-align: center;
+}
+.link5
+{
+font-weight:600;color:#fff;text-decoration: none;
+}
